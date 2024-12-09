@@ -1,0 +1,16 @@
+function bigShoeRebounds() {
+    const game = gameObject();
+    let largestShoeSize = 0;
+    let rebounds = 0;
+
+    for (let team in game) {
+        for (let player in game[team].players) {
+            let shoeSize = game[team].players[player].shoe;
+            if (shoeSize > largestShoeSize) {
+                largestShoeSize = shoeSize;
+                rebounds = game[team].players[player].rebounds;
+            }
+        }
+    }
+    return rebounds;
+}
